@@ -1,0 +1,14 @@
+.container {
+  display: flex;
+  flex: 1;
+  background-color: lightblue;
+  height: 10vh;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 10px grey;
+}
+
+.title-text {
+  color: white;
+  font-size: 24px;
+}
