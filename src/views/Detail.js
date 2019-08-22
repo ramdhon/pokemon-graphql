@@ -5,7 +5,7 @@ const Detail = ({ history, match }) => {
     <div>
       This is Detail
       {
-        JSON.stringify(match)
+        JSON.stringify({ offsetHeight: document.body.offsetHeight, innerHeight: window.innerHeight, scrollY: window.scrollY })
       }
     </div>
   );

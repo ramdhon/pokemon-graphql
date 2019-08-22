@@ -1,9 +1,9 @@
 import React from 'react';
-import './Navbar.scss';
+import './Components.scss';
 
 const Navbar = () => {
   return (
-    <div className="container">
+    <div className="navbar">
       <span className="title-text">Pokemon Pedia</span>
     </div>
   );
