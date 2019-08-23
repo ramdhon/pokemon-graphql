@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import './Views.scss';
-import { Query } from "react-apollo";
-import { gql } from "apollo-boost";
+import { Query } from 'react-apollo';
+import { gql } from 'apollo-boost';
+
+import { Card, Spacer } from '../components';
 
 const Home = () => {
   const [first, setFirst] = useState(10)
@@ -24,9 +26,9 @@ const Home = () => {
       {
         ({ loading, error, data }) => (
           <div className="container">
-            {
-              JSON.stringify(data)
-            }
+            <Spacer />
+            <Card />
+            <Spacer />
           </div>
         )
       }
