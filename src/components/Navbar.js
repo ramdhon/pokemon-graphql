@@ -4,7 +4,7 @@ import './Components.scss';
 const Navbar = () => {
   return (
     <div className="navbar">
-      <span className="title-text">Pokemon Pedia</span>
+      <span className="title-text">Pokémon Pedia</span>
     </div>
   );
 }

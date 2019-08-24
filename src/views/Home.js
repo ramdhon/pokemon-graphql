@@ -3,10 +3,10 @@ import './Views.scss';
 import { Query } from 'react-apollo';
 import { gql } from 'apollo-boost';
 
-import { Card, Spacer } from '../components';
+import { Card, Spacer, CircularLoading } from '../components';
 
-const Home = () => {
-  const [first, setFirst] = useState(10)
+const Home = (props) => {
+  const [first, setFirst] = useState(1000)
 
   const pokemons = gql`
   query {
@@ -25,11 +25,22 @@ const Home = () => {
     >
       {
         ({ loading, error, data }) => (
-          <div className="container">
-            <Spacer />
-            <Card />
-            <Spacer />
-          </div>
+          loading ?
+            <div className="container center">
+              <CircularLoading width="30px" height="30px" />
+            </div>
+          :
+            <div className="container">
+              <Spacer />
+              {
+                data.pokemons.map(item => (
+                  <>
+                    <Card {...props} item={item} />
+                    <Spacer />
+                  </>
+                ))
+              }
+            </div>
         )
       }
     </Query>

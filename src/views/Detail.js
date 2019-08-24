@@ -1,4 +1,5 @@
 import React from 'react';
+import './Views.scss';
 
 const Detail = ({ history, match }) => {
   return (

@@ -1,15 +1,28 @@
 import React from 'react';
+import './Components.scss';
+import LazyLoad from 'react-lazyload';
 
-const Card = () => {
+import { CircularLoading } from './index';
+
+const Card = ({ history, item }) => {
   return (
-    <div className="card">
-      <div className="image-box-card">
-        <img className="image-card" src="https://greenglobe.travel/wp-content/uploads/2016/03/BV-additional-photos-12.jpg" alt="" />
+    <LazyLoad
+      placeholder={
+        <div className="container center">
+          <CircularLoading width="20px" height="20px" />
+        </div>
+      }
+    >
+      <div className="card">
+        <div className="image-box-card">
+          <img className="image-card" src={item.image} alt={item.name} />
+        </div>
+        <div className="content-card">
+          <a onClick={() => history.push(`/${item.id}`)} className="title-content-card">{item.name}</a>
+          <span>{item.classification}</span>
+        </div>
       </div>
-      <div className="content-card">
-
-      </div>
-    </div>
+    </LazyLoad>
   );
 }
 
